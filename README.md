@@ -14,7 +14,7 @@ we use the same setting and benchmark as [faster-rcnn.pytorch](https://github.co
 
 model    |dataset| #GPUs | batch size | lr        | lr_decay | max_epoch     | mAP
 ---------|---------|--------|-----|--------|-----|-----|-----
-[Res-101]()    |  Visual Genome | 1 P100 | 4    |1e-3| 5   | 20  |   10.19
+[Res-101](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view?usp=sharing)    |  Visual Genome | 1 1080 TI | 4    |1e-3| 5   | 20  |   10.19
 
 Download the pretrained model and put it to the folder $load_dir.
 
@@ -64,33 +64,37 @@ python setup.py build develop
 Run ```genearte_tsv.py``` to extract features of image regions. The output file format will be a tsv, where the columns are ['image_id', 'image_w', 'image_h', 'num_boxes', 'boxes', 'features'].
 
 ```
-python --genearte_tsv.py --net res101 -- dataset vg --cuda
+python generate_tsv.py --net res101 --dataset vg \
+                       --out $out_file --cuda
 ```
 
-Change the parameter $load_dir (the path to the model) to adapt your environment.
+Use the parameter $load_dir (the path to the model, defult is '/models') to adapt your environment. Change the parameter $out_file to the path of the output file.
 
 PS. If you download other pretrained models, you can rename the model as 'faster_rcnn_$net_$dataset.pth' and modify the parameter $net and $dataset.
 
 #### Convert data
 
-Run ```convert_data.py``` to convert the above output to a numpy array. The output file format will be a npy, including image region features.
+Run ```convert_data.py``` to convert the above output to a numpy array. The output file $output_file format will be a npy, including image region features.
 
 ```
-python --convert_data.py
+python convert_data.py --imgid_list $imgid_list \
+                       --input_file $input_file --output_file $output_file
 ```
+
+The parameter $imgid_list is the path to a list of image id, in the format of '.txt'.
 
 #### Demo
 
 You can use this function to show object detections on demo images with a pre-trained model by running:
 
 ```
-python --demo.py --net res101 -- dataset vg \
-                 --load_dir --cuda
+# python demo.py --net res101 --dataset vg \
+                 --load_dir models --cuda
 ```
 
-You can also add images to folder $images and change the parameter $image_path.
+You can also add images to folder $image_dir and change the parameter $image_file to the filename.
 
 PS. If you download other pretrained models, you can rename the model as 'faster_rcnn_$net_$dataset.pth' and modify the parameter $net and $dataset.
 
 ## Acknowledgments
-Thanks to ['bottom-up-attention'](https://github.com/peteanderson80/bottom-up-attention) and [faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0). 
+Thanks to ['bottom-up-attention'](https://github.com/peteanderson80/bottom-up-attention) and [faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0).
