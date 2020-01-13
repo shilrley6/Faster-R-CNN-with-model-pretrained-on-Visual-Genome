@@ -1,10 +1,10 @@
 # Faster-R-CNN-with-model-pretrained-on-Visual-Genome
-Faster RCNN model in Pytorch version, pretrained on the Visual Genome with res101
+Faster RCNN model in Pytorch version, pretrained on the Visual Genome with ResNet-101
 ## Introduction
 
 we provide
 
-* **Pretrained Faster RCNN model**, which is trained with Visual Genome + Res101 + Pytorch
+* **Pretrained Faster RCNN model**, which is trained with Visual Genome + ResNet-101 + Pytorch
 
 * **Pytorch implementation of processing data tools**, the Caffe version of which is provided by the ['bottom-up-attention'](https://github.com/peteanderson80/bottom-up-attention)
 
