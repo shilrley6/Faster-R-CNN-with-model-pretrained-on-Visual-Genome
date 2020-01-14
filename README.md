@@ -104,7 +104,7 @@ python demo.py --net res101 --dataset vg \
                --load_dir $load_dir --cuda
 ```
 
-You can also add images to folder 'images' and change the parameter $image_file.
+You can also add images to the folder 'images' and change the parameter $image_file.
 
 PS. If you download other pretrained models, you can rename the model as 'faster_rcnn_$net_$dataset.pth' and modify the parameter $net and $dataset.
 
