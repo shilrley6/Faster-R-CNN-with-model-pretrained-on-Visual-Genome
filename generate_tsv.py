@@ -96,9 +96,6 @@ def parse_args():
     parser.add_argument('--cfg', dest='cfg_file',
                         help='optional config file',
                         default='cfgs/res101.yml', type=str)
-    parser.add_argument('--split', dest='data_split',
-                        help='dataset to use',
-                        default='karpathy_train', type=str)
     parser.add_argument('--set', dest='set_cfgs',
                         help='set config keys', default=None,
                         nargs=argparse.REMAINDER)
