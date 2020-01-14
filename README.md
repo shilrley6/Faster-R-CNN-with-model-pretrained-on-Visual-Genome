@@ -51,7 +51,9 @@ If you didn't install COCO API before, you are supposed to follow the following 
 ```
 cd data
 
-git clone https://github.com/pdollar/coco.git cd coco/PythonAPI
+git clone https://github.com/pdollar/coco.git
+
+cd coco/PythonAPI
 
 make
 ```
