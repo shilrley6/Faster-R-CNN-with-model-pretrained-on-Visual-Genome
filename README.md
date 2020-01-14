@@ -15,7 +15,7 @@ we use the same setting and benchmark as [faster-rcnn.pytorch](https://github.co
 
 model    |dataset| #GPUs | batch size | lr        | lr_decay | max_epoch     | mAP
 ---------|---------|--------|-----|--------|-----|-----|-----
-[Res-101]()    |  Visual Genome | 1 P100 | 4    |1e-3| 5   | 20  |   10.19
+[Res-101](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view?usp=sharing)    |  Visual Genome | 1 P100 | 4    |1e-3| 5   | 20  |   10.19
 
 Download the pretrained model and put it to the folder $load_dir.
 
@@ -77,10 +77,10 @@ python setup.py build develop
 
 #### Generate tsv
 
-Run ```genearte_tsv.py``` to extract features of image regions. The output file format will be a tsv, where the columns are ['image_id', 'image_w', 'image_h', 'num_boxes', 'boxes', 'features'].
+Run ```generate_tsv.py``` to extract features of image regions. The output file format will be a tsv, where the columns are ['image_id', 'image_w', 'image_h', 'num_boxes', 'boxes', 'features'].
 
 ```
-python --genearte_tsv.py --net res101 -- dataset vg --cuda
+python generate_tsv.py --net res101 -- dataset vg --cuda
 ```
 
 Change the parameter $load_dir (the path to the model) to adapt your environment.
@@ -92,7 +92,7 @@ PS. If you download other pretrained models, you can rename the model as 'faster
 Run ```convert_data.py``` to convert the above output to a numpy array. The output file format will be a npy, including image region features.
 
 ```
-python --convert_data.py
+python convert_data.py
 ```
 
 #### Demo
@@ -100,7 +100,7 @@ python --convert_data.py
 You can use this function to show object detections on demo images with a pre-trained model by running:
 
 ```
-python --demo.py --net res101 -- dataset vg \
+python demo.py --net res101 -- dataset vg \
                  --load_dir --cuda
 ```
 
