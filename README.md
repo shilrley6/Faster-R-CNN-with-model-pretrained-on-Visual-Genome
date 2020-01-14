@@ -44,20 +44,6 @@ Download the pretrained VGG16 and ResNet101 models according to your requirement
 
 Then put them into the path data/pretrained_model/.
 
-#### Pycocotools
-
-If you didn't install COCO API before, you are supposed to follow the following steps.
-
-```
-cd data
-
-git clone https://github.com/pdollar/coco.git
-
-cd coco/PythonAPI
-
-make
-```
-
 
 #### Compilation
 
@@ -71,6 +57,20 @@ Compile the cuda dependencies using following simple commands:
 ```
 cd lib
 python setup.py build develop
+```
+
+#### Pycocotools (Optional)
+
+If you didn't install COCO API before, you are supposed to follow the following steps.
+
+```
+cd data
+
+git clone https://github.com/pdollar/coco.git
+
+cd coco/PythonAPI
+
+make
 ```
 
 ### Data processing
