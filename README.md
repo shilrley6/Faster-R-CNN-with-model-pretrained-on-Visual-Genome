@@ -110,7 +110,7 @@ You can also add images to the folder 'images' and change the parameter $image_f
 Below are some detection results:
 
 <div style = 'color:#0000FF' align = 'center'>
-<img src = 'images/img3_result.png' width = '450'/> <img src = 'images/img4_result.png' width = '450'/>
+<img src = 'images/img3_result.png' width = '430'/> <img src = 'images/img4_result.png' width = '430'/>
 </div>
 
 PS. If you download other pretrained models, you can rename the model as 'faster_rcnn_$net_$dataset.pth' and modify the parameter $net and $dataset.
