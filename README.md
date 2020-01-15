@@ -5,9 +5,9 @@ Faster RCNN model in Pytorch version, pretrained on the Visual Genome with ResNe
 
 we provide
 
-* **Pretrained Faster RCNN model**, which is trained with Visual Genome + Res101 + Pytorch
+* **[Pretrained Faster RCNN model](https://drive.google.com/file/d/18n_3V1rywgeADZ3oONO0DsuuS9eMW6sN/view?usp=sharing)**, which is trained with Visual Genome + Res101 + Pytorch
 
-* **Pytorch implementation of processing data tools**, the Caffe version of which is provided by the ['bottom-up-attention'](https://github.com/peteanderson80/bottom-up-attention)
+* **Pytorch implementation of processing data tools**, ```generate_tsv.py``` and ```convert_data.py```, the Caffe version of which is provided by the ['bottom-up-attention'](https://github.com/peteanderson80/bottom-up-attention)
 
 ## Model
 
@@ -95,6 +95,7 @@ python convert_data.py --imgid_list $imgid_list  \
 ```
 
 The ' $imgid_list is a list of image ids, the format of which is 'txt'.
+
 #### Demo
 
 You can use this function to show object detections on demo images with a pre-trained model by running:
@@ -105,6 +106,12 @@ python demo.py --net res101 --dataset vg \
 ```
 
 You can also add images to the folder 'images' and change the parameter $image_file.
+
+Below are some detection results:
+
+<div style = 'color:#0000FF' align = 'center'>
+<img src = 'images/img3_results.png' width = '450'/> <img src = 'images/img4_results.png' width = '450'/>
+</div>
 
 PS. If you download other pretrained models, you can rename the model as 'faster_rcnn_$net_$dataset.pth' and modify the parameter $net and $dataset.
 
