@@ -322,7 +322,7 @@ def get_detections_from_im(fasterRCNN, classes, im_file, image_id, args, conf_th
         keep_boxes = torch.where(max_conf >= conf_thresh, max_conf, torch.tensor(0.0).cuda())
     else:
         keep_boxes = torch.where(max_conf >= conf_thresh, max_conf, torch.tensor(0.0))
-    keep_boxes = torch.squeeze(torch.nonzero(keep_boxes))
+    keep_boxes = torch.squeeze(torch.nonzero(keep_boxes), 1)
     if len(keep_boxes) < MIN_BOXES:
         keep_boxes = torch.argsort(max_conf, descending = True)[:MIN_BOXES]
     elif len(keep_boxes) > MAX_BOXES:
