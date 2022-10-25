@@ -344,7 +344,7 @@ if __name__ == '__main__':
   im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
   plt.imshow(im)
 
-  boxes = pred_boxes[keep_boxes]
+  boxes = pred_boxes[keep_boxes].cpu()
   objects = torch.argmax(scores[keep_boxes][:,1:], dim=1)
 
   for i in range(len(keep_boxes)):
